@@ -8,6 +8,20 @@ import (
 	"github.com/joho/godotenv"
 )
 
+type DatabaseConfig struct {
+	Url string
+}
+
+func NewDatabaseConfig() *DatabaseConfig {
+	return &DatabaseConfig{
+		Url: String("DATABASE_URL", ""),
+	}
+}
+
+func (dbc *DatabaseConfig) String() string {
+	return dbc.Url
+}
+
 func Init() {
 	if err := godotenv.Load(); err != nil {
 		log.Println("Error loading .env file")
@@ -43,14 +57,4 @@ func Bool(key string, defaultValue bool) bool {
 	}
 	return b
 
-}
-
-type DatabaseConfig struct {
-	url string
-}
-
-func NewDatabaseConfig() *DatabaseConfig {
-	return &DatabaseConfig{
-		url: String("DATABASE_URL", ""),
-	}
 }

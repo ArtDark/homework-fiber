@@ -1,6 +1,7 @@
 package main
 
 import (
+	"publicator/config"
 	"publicator/internal/pages"
 
 	"github.com/gofiber/fiber/v2"
@@ -8,6 +9,8 @@ import (
 )
 
 func main() {
+
+	config.Init()
 
 	pub := fiber.New()
 
