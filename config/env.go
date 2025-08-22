@@ -1,20 +1,43 @@
 package config
 
 import (
-	"log"
+	"log/slog"
 	"os"
 	"strconv"
 
 	"github.com/joho/godotenv"
 )
+type Main struct {
+	Database *DatabaseConfig
+	Log	  *LogConfig
+}
 
 type DatabaseConfig struct {
 	Url string
 }
 
+type LogConfig struct {
+	Level int
+	Type  string
+}
+
+func NewMainConfig() *Main {
+	return &Main{
+		Database: NewDatabaseConfig(),
+		Log:	  NewLogConfig(),
+	}
+}
+
 func NewDatabaseConfig() *DatabaseConfig {
 	return &DatabaseConfig{
 		Url: String("DATABASE_URL", ""),
+	}
+}
+
+func NewLogConfig() *LogConfig {
+	return &LogConfig{
+		Level: Int("LOG_LEVEL", 0),
+		Type:  String("LOG_TYPE", "text"),
 	}
 }
 
@@ -24,11 +47,12 @@ func (dbc *DatabaseConfig) String() string {
 
 func Init() {
 	if err := godotenv.Load(); err != nil {
-		log.Println("Error loading .env file")
+		slog.Error("cannot load .env file")
+
 		return
 	}
 
-	log.Println("Config initialized")
+	slog.Info("Config initialized")
 }
 
 func String(key, defaultValue string) string {
