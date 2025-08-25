@@ -1,6 +1,8 @@
 package pages
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"github.com/gofiber/fiber/v2"
+)
 
 type Handler struct {
 	router fiber.Router
@@ -14,7 +16,7 @@ func NewHandler(router fiber.Router) {
 }
 
 func (h *Handler) home(c *fiber.Ctx) error {
-	c.Set("Content-Type", "text/html")
+	items := []string{"#Еда", "#Животные", "#Машины", "#Спорт", "#Технологии", "#Музыка", "#Прочее"}
+	return c.Render("home", items)
 
-	return c.SendString("Hello, World")
 }
