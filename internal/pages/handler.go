@@ -1,7 +1,10 @@
 package pages
 
 import (
+	"homework-fiber/views"
+	"github.com/a-h/templ"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/adaptor"
 )
 
 type Handler struct {
@@ -16,7 +19,12 @@ func NewHandler(router fiber.Router) {
 }
 
 func (h *Handler) home(c *fiber.Ctx) error {
-	items := []string{"#Еда", "#Животные", "#Машины", "#Спорт", "#Технологии", "#Музыка", "#Прочее"}
-	return c.Render("home", items)
+	hello := views.Main()
 
+	return httpAdaptor(c, hello)
+
+}
+
+func httpAdaptor(c *fiber.Ctx, component templ.Component) error {
+	return adaptor.HTTPHandler(templ.Handler(component))(c)
 }

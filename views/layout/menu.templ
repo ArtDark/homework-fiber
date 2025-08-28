@@ -1,0 +1,42 @@
+package layout
+
+templ Menu() {
+	@MenyStyle()
+	<div class="menu">
+		<div class="menu__logo">
+			Logo
+		</div>
+		<div class="menu__right">
+			<a class="menu__right-link">RightMenu</a>
+		</div>
+	</div>
+}
+
+templ MenyStyle() {
+    <style>
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+        
+        }
+        .menu__logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .menu__right {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu__right-link {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .menu__right-link:hover {
+            color: #CCCCCC;
+        }
+    </style>
+}
