@@ -3,7 +3,7 @@ module homework-fiber
 go 1.24.3
 
 require (
-	github.com/a-h/templ v0.3.865
+	github.com/a-h/templ v0.3.943
 	github.com/samber/slog-fiber v1.18.0
 )
 
