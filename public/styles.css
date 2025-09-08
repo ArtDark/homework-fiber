@@ -1,6 +1,7 @@
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
+    --color-white: #ffffff;
+    --color-primary: #309689;
+    --color-primary-hover: #1c786b;
 }
 
 body {
