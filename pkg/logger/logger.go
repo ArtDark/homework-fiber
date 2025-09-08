@@ -3,7 +3,8 @@ package logger
 import (
 	"log/slog"
 	"os"
-	"publicator/config"
+
+	"homework-fiber/config"
 )
 
 type Service struct {

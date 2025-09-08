@@ -1,0 +1,13 @@
+package layout
+
+css headerClass() {
+	background-color: { "#666666" };
+	text-align: { "center" };
+}
+
+templ Header() {
+	<div class={ headerClass() }>
+		@Menu()
+		{ children... }
+	</div>
+}

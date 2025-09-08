@@ -1,0 +1,19 @@
+package views
+
+import "homework-fiber/views/components"
+import "homework-fiber/views/layout"
+
+templ Main() {
+	@layout.Layout(layout.LayoutProps{
+		Title:           "Найди работу своей мечты",
+		MetaDescription: "Сайт по поиску работы",
+	}) {
+		<main>
+			@layout.Header() {
+				@components.Title("Найди работу своей мечты")
+				@components.SubTitle("Простой поиск работы")
+			}
+			Main
+		</main>
+	}
+}
