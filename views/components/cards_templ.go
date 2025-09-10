@@ -131,7 +131,7 @@ func UserCardContainer(props []UserCardProps) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		for _, p := range props {
-			templ_7745c5c3_Err = Card(p.Title, p.Description).Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = UserCard(p.Title, p.Description).Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

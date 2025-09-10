@@ -31,7 +31,7 @@ templ UserCardContainer(props []UserCardProps) {
 	<div class="user__card-container">
 		@UserCardContainerStyle()
 		for _, p := range props {
-			@Card(p.Title, p.Description)
+			@UserCard(p.Title, p.Description)
 		}
 	</div>
 }
