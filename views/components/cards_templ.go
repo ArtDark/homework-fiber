@@ -93,7 +93,7 @@ func UserCardStyle() templ.Component {
 			templ_7745c5c3_Var4 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "<style>\r\n        .user__card {\r\n            width: 140px;\r\n            height: 200px;\r\n            \r\n            background-color: #fff;\r\n            border-radius: 8px;\r\n            \r\n            padding: 16px;\r\n        }\r\n    </style>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "<style>\n        .user__card {\n            width: 140px;\n            height: 200px;\n            \n            background-color: #fff;\n            border-radius: 8px;\n            \n            padding: 16px;\n        }\n    </style>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -165,7 +165,7 @@ func UserCardContainerStyle() templ.Component {
 			templ_7745c5c3_Var6 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "<style>\r\n        .user__card-container {\r\n            display: flex;\r\n            \r\n            justify-content: center;\r\n            gap: 16px;\r\n        \r\n            margin: 0 auto;\r\n            width: 140px;\r\n        }\r\n    </style>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "<style>\n        .user__card-container {\n            display: flex;\n            background-color: rgb(199, 255, 236);\n            justify-content: center;\n            gap: 16px;\n            padding: 20px;\n            margin: 0 auto;\n            \n        }\n    </style>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

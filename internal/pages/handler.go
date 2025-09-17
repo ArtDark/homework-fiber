@@ -13,8 +13,8 @@ type Handler struct {
 
 func NewHandler(router fiber.Router) {
 	h := &Handler{router: router}
-	apiV1 := h.router.Group("api/v1")
-	apiV1.Get("/", h.home)
+	h.router.Get("/", h.home)
+
 
 }
 

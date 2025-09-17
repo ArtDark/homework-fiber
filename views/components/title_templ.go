@@ -75,7 +75,7 @@ func TitleStyle() templ.Component {
 			templ_7745c5c3_Var3 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<style>\r\n        .title {\r\n            color: var(--color-white);\r\n            font-size: 70px;\r\n            font-weight: bold;\r\n            margin-bottom: 12px;\r\n            margin-top: 0px;\r\n        }\r\n    </style>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<style>\n        .title {\n            color: var(--color-white);\n            font-size: 70px;\n            font-weight: bold;\n            margin-bottom: 12px;\n            margin-top: 0px;\n        }\n    </style>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
