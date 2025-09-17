@@ -1,0 +1,51 @@
+package components
+
+type UserCardProps struct {
+	Title       string
+	Description string
+}
+
+templ UserCard(title string, description string) {
+	@UserCardStyle()
+	<div class="user__card">
+		<h3>{ title }</h3>
+		<p>{ description }</p>
+	</div>
+}
+
+templ UserCardStyle() {
+	<style>
+        .user__card {
+            width: 140px;
+            height: 200px;
+            
+            background-color: #fff;
+            border-radius: 8px;
+            
+            padding: 16px;
+        }
+    </style>
+}
+
+templ UserCardContainer(props []UserCardProps) {
+	<div class="user__card-container">
+		@UserCardContainerStyle()
+		for _, p := range props {
+			@UserCard(p.Title, p.Description)
+		}
+	</div>
+}
+
+templ UserCardContainerStyle() {
+	<style>
+        .user__card-container {
+            display: flex;
+            
+            justify-content: center;
+            gap: 16px;
+        
+            margin: 0 auto;
+            width: 140px;
+        }
+    </style>
+}
