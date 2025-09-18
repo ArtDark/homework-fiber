@@ -1,16 +1,17 @@
 package wigets
 
+import "homework-fiber/views/components"
+
 templ RegistrationForm() {
 	@RegistrationFormStyle()
+    <div id="result"></div>
 	<div class="regform">
-		<form>
-			<input type="text" name="login" placeholder="login"/>
-			<input type="email" name="email" placeholder="Email"/>
-			<input type="password" name="password" placeholder="Password"/>
+		<form hx-post="/api/register" hx-target="#result">
+			@components.Input("text", "login", "login")
+			@components.Input("email", "email", "Email")
+			@components.Input("password", "password", "Password")
+			@components.Button("submit", "/api/register", "#result") {Register}
 		</form>
-		<div class="reg-button">
-			<button class="link-button" hx-trigger=""y>Register</button>
-		</div>
 	</div>
 }
 
@@ -25,6 +26,7 @@ templ RegistrationFormStyle() {
         padding: 10px;
         padding-bottom: 20px;
         width:auto;
+       border: #ccc;
     }
     .reg-button {
         margin-top: 10px;

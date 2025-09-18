@@ -1,0 +1,80 @@
+package components
+
+const (
+	NotificationTypeSuccess = iota
+	NotificationTypeError
+)
+
+type NotificationProps struct {
+	TypeMsg int
+	Message string
+}
+
+templ Notification(props NotificationProps) {
+    @NotificationStyle()
+    <div 
+        class={ 
+            "notification-box", 
+            templ.KV("success", props.TypeMsg `==` NotificationTypeSuccess),
+            templ.KV("error", props.TypeMsg `==` NotificationTypeError)
+        } 
+        role="alert"
+    >
+        <strong class="notification-title">
+            if props.TypeMsg `==` NotificationTypeSuccess {
+                Прекрасно!
+            } else if props.TypeMsg `==` NotificationTypeError {
+                Ошибка!
+            }
+        </strong>
+        <span class="notification-message">{ props.Message }</span>
+        <span class="close-btn">
+            <svg role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <title>Close</title>
+                <path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.759 3.15a1.2 1.2 0 0 1 0 1.698z"></path>
+            </svg>
+        </span>
+    </div>
+}
+
+templ NotificationStyle() {
+	<style>
+    .error-box {
+        background-color: #fee2e2;
+        border: 1px solid #f87171;
+        color: #b91c1c;
+        padding: 0.75rem 1rem;
+        border-radius: 0.25rem;
+        position: relative;
+    }
+
+    .error-box .error-title {
+        font-weight: 700;
+    }
+
+    .error-box .error-message {
+        display: block;
+    }
+
+    @media (min-width: 640px) {
+        .error-box .error-message {
+            display: inline;
+        }
+    }
+
+    .error-box .close-btn {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        padding: 0.75rem 1rem;
+    }
+
+    .error-box .close-btn svg {
+        fill: currentColor;
+        height: 1.5rem;
+        width: 1.5rem;
+        color: #ef4444;
+    }
+</style>
+}
