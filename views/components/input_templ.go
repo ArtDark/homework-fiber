@@ -101,7 +101,7 @@ func InputStyle() templ.Component {
 			templ_7745c5c3_Var5 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<style>\n        .form-input {\n        padding: 12px 16px;\n        border: 1px solid #ccc;\n        border-radius: 8px;\n        margin-bottom: 16px;\n        width: 100%;\n        font-size: 16px;\n    }\n    .form-input:focus {\n        border-color: var(--color-primary);\n        outline: none;\n    }\n    </style>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<style>\r\n        .form-input {\r\n        padding: 12px 16px;\r\n        border: 1px solid #ccc;\r\n        border-radius: 8px;\r\n        margin-bottom: 16px;\r\n        width: 100%;\r\n        font-size: 16px;\r\n    }\r\n    .form-input:focus {\r\n        border-color: var(--color-primary);\r\n        outline: none;\r\n    }\r\n    </style>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

@@ -102,7 +102,7 @@ func RegistrationFormStyle() templ.Component {
 			templ_7745c5c3_Var3 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "<style>\n    .regform {\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        border: 1px solid #ccc;\n        background-color: #fff;\n        padding: 10px;\n        padding-bottom: 20px;\n        width:auto;\n       border: #ccc;\n    }\n    .reg-button {\n        margin-top: 10px;\n    }\n\n    </style>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "<style>\r\n    .regform {\r\n        display: flex;\r\n        flex-direction: column;\r\n        align-items: center;\r\n        border: 1px solid #ccc;\r\n        background-color: #fff;\r\n        padding: 10px;\r\n        padding-bottom: 20px;\r\n        width:auto;\r\n       border: #ccc;\r\n    }\r\n    .reg-button {\r\n        margin-top: 10px;\r\n    }\r\n\r\n    </style>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

@@ -1,6 +1,7 @@
 package pages
 
 import (
+	"fmt"
 	"homework-fiber/views"
 	"homework-fiber/views/components"
 
@@ -45,7 +46,12 @@ func (h *Handler) register(c *fiber.Ctx) error {
 
 	c.BodyParser(&form)
 
-	return httpAdaptor(c, components.Notification())
+	fmt.Println(form)
+
+	return httpAdaptor(c, components.Notifucation(components.NotificationProps{
+		TypeMsg: components.NotificationTypeSuccess,
+		Message: "Success",
+	}))
 }
 
 func httpAdaptor(c *fiber.Ctx, component templ.Component) error {
