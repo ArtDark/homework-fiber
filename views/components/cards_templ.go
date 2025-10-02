@@ -165,7 +165,7 @@ func UserCardContainerStyle() templ.Component {
 			templ_7745c5c3_Var6 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "<style>\r\n        .user__card-container {\r\n            display: flex;\r\n            \r\n            justify-content: center;\r\n            gap: 16px;\r\n        \r\n            margin: 0 auto;\r\n            width: 140px;\r\n        }\r\n    </style>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "<style>\r\n        .user__card-container {\r\n            display: flex;\r\n            background-color: rgb(199, 255, 236);\r\n            justify-content: center;\r\n            gap: 16px;\r\n            padding: 20px;\r\n            margin: 0 auto;\r\n            \r\n        }\r\n    </style>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

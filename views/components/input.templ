@@ -1,0 +1,25 @@
+package components
+
+templ Input(inputType, name, placeholder string) {
+    @InputStyle()
+    <input class="form-input" type={inputType} name={name} placeholder={placeholder} />
+}
+
+
+templ InputStyle() {
+    <style>
+        .form-input {
+        padding: 12px 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        width: 100%;
+        font-size: 16px;
+    }
+    .form-input:focus {
+        border-color: var(--color-primary);
+        outline: none;
+    }
+    </style>
+    
+}

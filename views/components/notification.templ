@@ -1,0 +1,20 @@
+package components
+
+const (
+	NotificationTypeSuccess = iota
+	NotificationTypeError
+)
+
+type NotificationProps struct {
+	TypeMsg int
+	Message string
+}
+
+templ Notifucation(props NotificationProps) {
+    @NotificationStyle()
+    
+}
+
+templ NotificationStyle() {
+
+}

@@ -1,0 +1,36 @@
+package wigets
+
+import "homework-fiber/views/components"
+
+templ RegistrationForm() {
+	@RegistrationFormStyle()
+    <div id="result"></div>
+	<div class="regform">
+		<form hx-post="/api/register" hx-target="#result">
+			@components.Input("text", "login", "login")
+			@components.Input("email", "email", "Email")
+			@components.Input("password", "password", "Password")
+			@components.Button("submit", "/api/register", "#result") {Register}
+		</form>
+	</div>
+}
+
+templ RegistrationFormStyle() {
+	<style>
+    .regform {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        padding: 10px;
+        padding-bottom: 20px;
+        width:auto;
+       border: #ccc;
+    }
+    .reg-button {
+        margin-top: 10px;
+    }
+
+    </style>
+}

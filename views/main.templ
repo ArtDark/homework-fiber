@@ -14,10 +14,12 @@ templ Main() {
 				@components.SubTitle("Простой поиск работы")
 			}
 			@layout.Nav([]string{"#Еда", "#Животные", "#Машины", "#Спорт", "#Технологии", "#Музыка", "#Прочее"})
-			@components.UserCardContainer([]components.UserCardProps{
+			<div>
+				@components.UserCardContainer([]components.UserCardProps{
 					{Title: "Card 1", Description: "Description 1"},
 					{Title: "Card 2", Description: "Description 2"},
 				})
+			</div>
 		</main>
 	}
 }

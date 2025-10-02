@@ -1,0 +1,17 @@
+package views
+
+import "homework-fiber/views/layout"
+import "homework-fiber/views/wigets"
+
+templ RegisterPage(){
+    @layout.Layout(layout.LayoutProps{
+		Title:           "Найди работу своей мечты",
+		MetaDescription: "Сайт по поиску работы",
+	}){
+        <main>
+            @layout.Header()
+            @wigets.RegistrationForm()
+        </main>
+    }
+}
+

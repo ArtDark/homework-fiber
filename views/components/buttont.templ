@@ -1,0 +1,25 @@
+package components
+
+templ Button(buttonType string, hxPost string, hxTarget string) {
+    @ButtonStyle()
+    <button type={ buttonType } class="form-button" hx-post={ hxPost } hx-target={ hxTarget }>
+        { children... }
+    </button>
+}
+
+templ ButtonStyle() {
+    <style>
+    .form-button {
+        padding: 15px 20px;
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .form-button:hover {
+        background-color: var(--color-primary-hover);
+    }
+    </style>
+}
