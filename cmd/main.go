@@ -3,6 +3,7 @@ package main
 import (
 	"homework-fiber/config"
 	"homework-fiber/internal/pages"
+	"homework-fiber/pkg/database"
 	"homework-fiber/pkg/logger"
 
 	"github.com/gofiber/fiber/v2"
@@ -18,9 +19,15 @@ func main() {
 
 	pub := fiber.New()
 
+	logService := logger.NewService(cfg.Log)
+
 	pub.Use(recover.New())
-	pub.Use(slfiber.New(logger.NewService(cfg.Log).Info))
-	pub.Use(slfiber.New(logger.NewService(cfg.Log).Error))
+	pub.Use(slfiber.New(logService.Info))
+	pub.Use(slfiber.New(logService.Error))
+
+
+	dbPool := database.CreateDbPool(cfg.Database,logService)
+	defer database.CloseDbPool(dbPool,logService)
 
 	pub.Static("/public", "./public")
 

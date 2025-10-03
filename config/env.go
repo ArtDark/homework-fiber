@@ -41,7 +41,7 @@ func NewLogConfig() *LogConfig {
 	}
 }
 
-func (dbc *DatabaseConfig) String() string {
+func (dbc *DatabaseConfig) DbUrl() string {
 	return dbc.Url
 }
 
